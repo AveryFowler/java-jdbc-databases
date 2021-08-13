@@ -30,7 +30,7 @@ public class TotalOrderDao {
     public BigDecimal getTotalAllPaidOrders(ParamsDto paramsDto) {
         BigDecimal result = null;
 
-        try (Connection con = null;
+        try (Connection con = database.getConnection();
              CallableStatement cs = createCallableStatement(con, paramsDto.getCustomerId())
         ) {
 
