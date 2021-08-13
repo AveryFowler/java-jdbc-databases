@@ -13,8 +13,10 @@ public class ExceptionHandler {
      */
     public static void handleException(SQLException sqlException) {
         System.out.println("Error code "+sqlException.getErrorCode());
-        System.out.println("Stack Trace " + sqlException.getStackTrace());
+        //System.out.println("Stack Trace " + sqlException.getStackTrace());
         System.out.println("Sql State " + sqlException.getSQLState());
         System.out.println("Message: " + sqlException.getMessage());
+        System.out.print("Stack trace: ");
+        sqlException.printStackTrace();
     }
 }
