@@ -15,5 +15,6 @@ public class ExceptionHandler {
         System.out.println("Error code "+sqlException.getErrorCode());
         System.out.println("Stack Trace " + sqlException.getStackTrace());
         System.out.println("Sql State " + sqlException.getSQLState());
+        System.out.println("Message: " + sqlException.getMessage());
     }
 }

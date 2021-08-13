@@ -37,9 +37,9 @@ public class GetOrderDao {
              PreparedStatement ps = createPreparedStatement(con, paramsDto.getOrderId());
              ResultSet rs = createResultSet(ps)
         ) {
-            while(rs.next()){
-                OrderDto x = new OrderDto();
-                orderDto = x;
+            if(rs.next()){
+                
+                orderDto = new OrderDto();
 
                 orderDto.setOrderId(rs.getLong("order_id"));
                 orderDto.setCustomerId(rs.getLong("order_customer_id"));
@@ -75,7 +75,7 @@ public class GetOrderDao {
      * @throws SQLException In case of an error
      */
     private ResultSet createResultSet(PreparedStatement ps) throws SQLException {
-            ResultSet resultSet = ps.executeQuery(query);
-        return resultSet;
+            
+        return ps.executeQuery();
     }
 }
